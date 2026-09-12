@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{lrr}
+\toprule
+Model & Acc. & Macro-F1 \\
+\midrule
+\multicolumn{3}{l}{\textit{Full conversation}} \\
+\quad TF--IDF + logistic regression & .840 & .839 \\
+\quad ModernBERT-base & .815 & .813 \\
+\quad ModernBERT-large & \textbf{.845} & \textbf{.845} \\
+\midrule
+\multicolumn{3}{l}{\textit{Prefix models (final turn)}} \\
+\quad TF--IDF + logistic regression & .825 & .823 \\
+\quad ModernBERT-base & .830 & .828 \\
+\quad ModernBERT-large & \textbf{.860} & \textbf{.859} \\
+\bottomrule
+\end{tabular}
+\caption{Guidance detection on the 200 adjudicated gold conversations. Prefix models are scored after the final user turn. Full metrics and bootstrap intervals are provided in the supplementary material. Bold marks the best value within each block.}
+\label{tab:gold-guidance}
+\end{table}

@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrr}
+\toprule
+Split & $n$ & Guidance & Legal content & Gold guidance \\
+\midrule
+Full silver dataset & 2,122 & 972 (45.8\%) & 1,367 (64.4\%) & -- \\
+Development pool & 1,922 & 884 (46.0\%) & 1,232 (64.1\%) & -- \\
+\quad Train & 1,632 & 750 (46.0\%) & 1,048 (64.2\%) & -- \\
+\quad Validation & 290 & 134 (46.2\%) & 184 (63.4\%) & -- \\
+Gold set & 200 & 88 (44.0\%) & 135 (67.5\%) & 84 (42.0\%) \\
+\bottomrule
+\end{tabular}
+\caption{Taxonomy-v3 label summary. The first three columns are silver labels; the last reports the manually annotated and adjudicated human guidance labels, which exist only for the gold set and supersede its silver labels for evaluation. The dataset was enriched during screening, so these percentages are not WildChat prevalence estimates.}
+\label{tab:dataset-summary}
+\end{table}

@@ -1,0 +1,638 @@
+{
+  "tf_idf_logreg_guidance": {
+    "GUIDANCE": {
+      "precision": 0.7653061224489796,
+      "recall": 0.8928571428571429,
+      "f1-score": 0.8241758241758241,
+      "support": 84.0
+    },
+    "NO_GUIDANCE": {
+      "precision": 0.9117647058823529,
+      "recall": 0.8017241379310345,
+      "f1-score": 0.8532110091743119,
+      "support": 116.0
+    },
+    "accuracy": 0.84,
+    "macro avg": {
+      "precision": 0.8385354141656662,
+      "recall": 0.8472906403940887,
+      "f1-score": 0.838693416675068,
+      "support": 200.0
+    },
+    "weighted avg": {
+      "precision": 0.850252100840336,
+      "recall": 0.84,
+      "f1-score": 0.8410162314749471,
+      "support": 200.0
+    }
+  },
+  "tf_idf_logreg_oracle_topic": {
+    "BUSINESS_AND_COMMERCIAL": {
+      "precision": 0.5714285714285714,
+      "recall": 0.7272727272727273,
+      "f1-score": 0.64,
+      "support": 11.0
+    },
+    "CIVIL_RIGHTS_AND_CONSTITUTIONAL": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "CONSUMER_AND_PERSONAL_FINANCE": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.6666666666666666,
+      "support": 3.0
+    },
+    "CRIMINAL_LAW": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1-score": 0.8571428571428571,
+      "support": 12.0
+    },
+    "DATA_PRIVACY_AND_TECHNOLOGY": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 4.0
+    },
+    "EMPLOYMENT_AND_LABOR": {
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1-score": 0.8888888888888888,
+      "support": 10.0
+    },
+    "FAMILY_AND_ESTATES": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.6666666666666666,
+      "support": 3.0
+    },
+    "GOVERNMENT_AND_ADMINISTRATIVE": {
+      "precision": 0.16666666666666666,
+      "recall": 0.2,
+      "f1-score": 0.18181818181818182,
+      "support": 5.0
+    },
+    "HOUSING_AND_PROPERTY": {
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1-score": 0.8571428571428571,
+      "support": 8.0
+    },
+    "IMMIGRATION_AND_CITIZENSHIP": {
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1-score": 0.8,
+      "support": 8.0
+    },
+    "INTELLECTUAL_PROPERTY": {
+      "precision": 0.5,
+      "recall": 0.7142857142857143,
+      "f1-score": 0.5882352941176471,
+      "support": 7.0
+    },
+    "TAX_LAW": {
+      "precision": 0.8333333333333334,
+      "recall": 0.4166666666666667,
+      "f1-score": 0.5555555555555556,
+      "support": 12.0
+    },
+    "accuracy": 0.6785714285714286,
+    "macro avg": {
+      "precision": 0.5684523809523809,
+      "recall": 0.5784632034632035,
+      "f1-score": 0.5585097473332766,
+      "support": 84.0
+    },
+    "weighted avg": {
+      "precision": 0.6780045351473923,
+      "recall": 0.6785714285714286,
+      "f1-score": 0.656727984122942,
+      "support": 84.0
+    }
+  },
+  "tf_idf_logreg_cascade": {
+    "BUSINESS_AND_COMMERCIAL": {
+      "precision": 0.6153846153846154,
+      "recall": 0.7272727272727273,
+      "f1-score": 0.6666666666666666,
+      "support": 11.0
+    },
+    "CIVIL_RIGHTS_AND_CONSTITUTIONAL": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "CONSUMER_AND_PERSONAL_FINANCE": {
+      "precision": 0.5,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.5714285714285714,
+      "support": 3.0
+    },
+    "CRIMINAL_LAW": {
+      "precision": 0.5454545454545454,
+      "recall": 1.0,
+      "f1-score": 0.7058823529411765,
+      "support": 12.0
+    },
+    "DATA_PRIVACY_AND_TECHNOLOGY": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 4.0
+    },
+    "EMPLOYMENT_AND_LABOR": {
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1-score": 0.8,
+      "support": 10.0
+    },
+    "FAMILY_AND_ESTATES": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.6666666666666666,
+      "support": 3.0
+    },
+    "GOVERNMENT_AND_ADMINISTRATIVE": {
+      "precision": 0.14285714285714285,
+      "recall": 0.2,
+      "f1-score": 0.16666666666666666,
+      "support": 5.0
+    },
+    "HOUSING_AND_PROPERTY": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1-score": 0.6666666666666666,
+      "support": 8.0
+    },
+    "IMMIGRATION_AND_CITIZENSHIP": {
+      "precision": 0.5714285714285714,
+      "recall": 1.0,
+      "f1-score": 0.7272727272727273,
+      "support": 8.0
+    },
+    "INTELLECTUAL_PROPERTY": {
+      "precision": 0.35714285714285715,
+      "recall": 0.7142857142857143,
+      "f1-score": 0.47619047619047616,
+      "support": 7.0
+    },
+    "NO_GUIDANCE": {
+      "precision": 0.9117647058823529,
+      "recall": 0.8017241379310345,
+      "f1-score": 0.8532110091743119,
+      "support": 116.0
+    },
+    "TAX_LAW": {
+      "precision": 0.8333333333333334,
+      "recall": 0.4166666666666667,
+      "f1-score": 0.5555555555555556,
+      "support": 12.0
+    },
+    "accuracy": 0.74,
+    "macro avg": {
+      "precision": 0.5341563413961604,
+      "recall": 0.5764063522684213,
+      "f1-score": 0.5274005660945759,
+      "support": 200.0
+    },
+    "weighted avg": {
+      "precision": 0.7818255274137627,
+      "recall": 0.74,
+      "f1-score": 0.7423776641599091,
+      "support": 200.0
+    }
+  },
+  "modernbert_base_guidance": {
+    "GUIDANCE": {
+      "precision": 0.7473684210526316,
+      "recall": 0.8452380952380952,
+      "f1-score": 0.7932960893854749,
+      "support": 84.0
+    },
+    "NO_GUIDANCE": {
+      "precision": 0.8761904761904762,
+      "recall": 0.7931034482758621,
+      "f1-score": 0.832579185520362,
+      "support": 116.0
+    },
+    "accuracy": 0.815,
+    "macro avg": {
+      "precision": 0.8117794486215539,
+      "recall": 0.8191707717569787,
+      "f1-score": 0.8129376374529185,
+      "support": 200.0
+    },
+    "weighted avg": {
+      "precision": 0.8220852130325814,
+      "recall": 0.815,
+      "f1-score": 0.8160802851437094,
+      "support": 200.0
+    }
+  },
+  "modernbert_base_oracle_topic": {
+    "BUSINESS_AND_COMMERCIAL": {
+      "precision": 0.8333333333333334,
+      "recall": 0.45454545454545453,
+      "f1-score": 0.5882352941176471,
+      "support": 11.0
+    },
+    "CIVIL_RIGHTS_AND_CONSTITUTIONAL": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "CONSUMER_AND_PERSONAL_FINANCE": {
+      "precision": 0.4,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.5,
+      "support": 3.0
+    },
+    "CRIMINAL_LAW": {
+      "precision": 0.9090909090909091,
+      "recall": 0.8333333333333334,
+      "f1-score": 0.8695652173913043,
+      "support": 12.0
+    },
+    "DATA_PRIVACY_AND_TECHNOLOGY": {
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1-score": 0.75,
+      "support": 4.0
+    },
+    "EMPLOYMENT_AND_LABOR": {
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1-score": 0.9,
+      "support": 10.0
+    },
+    "FAMILY_AND_ESTATES": {
+      "precision": 0.6,
+      "recall": 1.0,
+      "f1-score": 0.75,
+      "support": 3.0
+    },
+    "GOVERNMENT_AND_ADMINISTRATIVE": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 5.0
+    },
+    "HOUSING_AND_PROPERTY": {
+      "precision": 1.0,
+      "recall": 0.875,
+      "f1-score": 0.9333333333333333,
+      "support": 8.0
+    },
+    "IMMIGRATION_AND_CITIZENSHIP": {
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1-score": 0.8,
+      "support": 8.0
+    },
+    "INTELLECTUAL_PROPERTY": {
+      "precision": 0.7777777777777778,
+      "recall": 1.0,
+      "f1-score": 0.875,
+      "support": 7.0
+    },
+    "TAX_LAW": {
+      "precision": 0.8181818181818182,
+      "recall": 0.75,
+      "f1-score": 0.782608695652174,
+      "support": 12.0
+    },
+    "micro avg": {
+      "precision": 0.7590361445783133,
+      "recall": 0.75,
+      "f1-score": 0.7544910179640718,
+      "support": 84.0
+    },
+    "macro avg": {
+      "precision": 0.6379208754208755,
+      "recall": 0.6857954545454547,
+      "f1-score": 0.6457285450412049,
+      "support": 84.0
+    },
+    "weighted avg": {
+      "precision": 0.757996632996633,
+      "recall": 0.75,
+      "f1-score": 0.7385516887914586,
+      "support": 84.0
+    }
+  },
+  "modernbert_base_cascade": {
+    "BUSINESS_AND_COMMERCIAL": {
+      "precision": 0.8333333333333334,
+      "recall": 0.45454545454545453,
+      "f1-score": 0.5882352941176471,
+      "support": 11.0
+    },
+    "CIVIL_RIGHTS_AND_CONSTITUTIONAL": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "CONSUMER_AND_PERSONAL_FINANCE": {
+      "precision": 0.1111111111111111,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.16666666666666666,
+      "support": 3.0
+    },
+    "CRIMINAL_LAW": {
+      "precision": 0.5833333333333334,
+      "recall": 0.5833333333333334,
+      "f1-score": 0.5833333333333334,
+      "support": 12.0
+    },
+    "DATA_PRIVACY_AND_TECHNOLOGY": {
+      "precision": 0.6,
+      "recall": 0.75,
+      "f1-score": 0.6666666666666666,
+      "support": 4.0
+    },
+    "EMPLOYMENT_AND_LABOR": {
+      "precision": 0.7,
+      "recall": 0.7,
+      "f1-score": 0.7,
+      "support": 10.0
+    },
+    "FAMILY_AND_ESTATES": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1-score": 0.6666666666666666,
+      "support": 3.0
+    },
+    "GOVERNMENT_AND_ADMINISTRATIVE": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 5.0
+    },
+    "HOUSING_AND_PROPERTY": {
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1-score": 0.8571428571428571,
+      "support": 8.0
+    },
+    "IMMIGRATION_AND_CITIZENSHIP": {
+      "precision": 0.6153846153846154,
+      "recall": 1.0,
+      "f1-score": 0.7619047619047619,
+      "support": 8.0
+    },
+    "INTELLECTUAL_PROPERTY": {
+      "precision": 0.5,
+      "recall": 0.7142857142857143,
+      "f1-score": 0.5882352941176471,
+      "support": 7.0
+    },
+    "NO_GUIDANCE": {
+      "precision": 0.8761904761904762,
+      "recall": 0.7931034482758621,
+      "f1-score": 0.832579185520362,
+      "support": 116.0
+    },
+    "TAX_LAW": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.6666666666666666,
+      "support": 12.0
+    },
+    "micro avg": {
+      "precision": 0.7323232323232324,
+      "recall": 0.725,
+      "f1-score": 0.7286432160804021,
+      "support": 200.0
+    },
+    "macro avg": {
+      "precision": 0.537386118155349,
+      "recall": 0.5957898423415665,
+      "f1-score": 0.5444690302156365,
+      "support": 200.0
+    },
+    "weighted avg": {
+      "precision": 0.7673058608058608,
+      "recall": 0.725,
+      "f1-score": 0.7364323421676363,
+      "support": 200.0
+    }
+  },
+  "modernbert_large_guidance": {
+    "GUIDANCE": {
+      "precision": 0.7523809523809524,
+      "recall": 0.9404761904761905,
+      "f1-score": 0.8359788359788359,
+      "support": 84.0
+    },
+    "NO_GUIDANCE": {
+      "precision": 0.9473684210526315,
+      "recall": 0.7758620689655172,
+      "f1-score": 0.8530805687203792,
+      "support": 116.0
+    },
+    "accuracy": 0.845,
+    "macro avg": {
+      "precision": 0.8498746867167919,
+      "recall": 0.8581691297208538,
+      "f1-score": 0.8445297023496076,
+      "support": 200.0
+    },
+    "weighted avg": {
+      "precision": 0.8654736842105263,
+      "recall": 0.845,
+      "f1-score": 0.845897840968931,
+      "support": 200.0
+    }
+  },
+  "modernbert_large_oracle_topic": {
+    "BUSINESS_AND_COMMERCIAL": {
+      "precision": 0.7,
+      "recall": 0.6363636363636364,
+      "f1-score": 0.6666666666666666,
+      "support": 11.0
+    },
+    "CIVIL_RIGHTS_AND_CONSTITUTIONAL": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "CONSUMER_AND_PERSONAL_FINANCE": {
+      "precision": 0.4,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.5,
+      "support": 3.0
+    },
+    "CRIMINAL_LAW": {
+      "precision": 0.7857142857142857,
+      "recall": 0.9166666666666666,
+      "f1-score": 0.8461538461538461,
+      "support": 12.0
+    },
+    "DATA_PRIVACY_AND_TECHNOLOGY": {
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1-score": 0.75,
+      "support": 4.0
+    },
+    "EMPLOYMENT_AND_LABOR": {
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1-score": 0.9,
+      "support": 10.0
+    },
+    "FAMILY_AND_ESTATES": {
+      "precision": 0.5,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.5714285714285714,
+      "support": 3.0
+    },
+    "GOVERNMENT_AND_ADMINISTRATIVE": {
+      "precision": 0.5,
+      "recall": 0.4,
+      "f1-score": 0.4444444444444444,
+      "support": 5.0
+    },
+    "HOUSING_AND_PROPERTY": {
+      "precision": 0.8571428571428571,
+      "recall": 0.75,
+      "f1-score": 0.8,
+      "support": 8.0
+    },
+    "IMMIGRATION_AND_CITIZENSHIP": {
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1-score": 0.8571428571428571,
+      "support": 8.0
+    },
+    "INTELLECTUAL_PROPERTY": {
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1-score": 0.9333333333333333,
+      "support": 7.0
+    },
+    "TAX_LAW": {
+      "precision": 0.8181818181818182,
+      "recall": 0.75,
+      "f1-score": 0.782608695652174,
+      "support": 12.0
+    },
+    "micro avg": {
+      "precision": 0.7710843373493976,
+      "recall": 0.7619047619047619,
+      "f1-score": 0.7664670658682635,
+      "support": 84.0
+    },
+    "macro avg": {
+      "precision": 0.6738365800865801,
+      "recall": 0.6821969696969697,
+      "f1-score": 0.6709815345684911,
+      "support": 84.0
+    },
+    "weighted avg": {
+      "precision": 0.7753440012368583,
+      "recall": 0.7619047619047619,
+      "f1-score": 0.7631603328808299,
+      "support": 84.0
+    }
+  },
+  "modernbert_large_cascade": {
+    "BUSINESS_AND_COMMERCIAL": {
+      "precision": 0.5,
+      "recall": 0.6363636363636364,
+      "f1-score": 0.56,
+      "support": 11.0
+    },
+    "CIVIL_RIGHTS_AND_CONSTITUTIONAL": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "CONSUMER_AND_PERSONAL_FINANCE": {
+      "precision": 0.2,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.3076923076923077,
+      "support": 3.0
+    },
+    "CRIMINAL_LAW": {
+      "precision": 0.5625,
+      "recall": 0.75,
+      "f1-score": 0.6428571428571429,
+      "support": 12.0
+    },
+    "DATA_PRIVACY_AND_TECHNOLOGY": {
+      "precision": 0.5,
+      "recall": 0.75,
+      "f1-score": 0.6,
+      "support": 4.0
+    },
+    "EMPLOYMENT_AND_LABOR": {
+      "precision": 0.75,
+      "recall": 0.9,
+      "f1-score": 0.8181818181818182,
+      "support": 10.0
+    },
+    "FAMILY_AND_ESTATES": {
+      "precision": 0.5,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.5714285714285714,
+      "support": 3.0
+    },
+    "GOVERNMENT_AND_ADMINISTRATIVE": {
+      "precision": 0.4,
+      "recall": 0.4,
+      "f1-score": 0.4,
+      "support": 5.0
+    },
+    "HOUSING_AND_PROPERTY": {
+      "precision": 0.7142857142857143,
+      "recall": 0.625,
+      "f1-score": 0.6666666666666666,
+      "support": 8.0
+    },
+    "IMMIGRATION_AND_CITIZENSHIP": {
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1-score": 0.75,
+      "support": 8.0
+    },
+    "INTELLECTUAL_PROPERTY": {
+      "precision": 0.7,
+      "recall": 1.0,
+      "f1-score": 0.8235294117647058,
+      "support": 7.0
+    },
+    "NO_GUIDANCE": {
+      "precision": 0.9473684210526315,
+      "recall": 0.7758620689655172,
+      "f1-score": 0.8530805687203792,
+      "support": 116.0
+    },
+    "TAX_LAW": {
+      "precision": 0.6923076923076923,
+      "recall": 0.75,
+      "f1-score": 0.72,
+      "support": 12.0
+    },
+    "accuracy": 0.755,
+    "macro avg": {
+      "precision": 0.5551124482804645,
+      "recall": 0.6669660798971143,
+      "f1-score": 0.5933412682547379,
+      "support": 200.0
+    },
+    "weighted avg": {
+      "precision": 0.8033335743204165,
+      "recall": 0.755,
+      "f1-score": 0.7689442586035838,
+      "support": 200.0
+    }
+  }
+}

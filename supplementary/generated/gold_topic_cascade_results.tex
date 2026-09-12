@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrrlrrrrrr}
+\toprule
+& \multicolumn{3}{c}{Topic only$^{\dagger}$} & \multicolumn{2}{c}{End-to-end} & \multicolumn{4}{c}{Cascade errors} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-6}\cmidrule(lr){7-10}
+Model & Acc. & Macro-F1 & \multicolumn{1}{c}{95\% CI} & Acc. & Macro-F1 & FP & FN & Topic & All \\
+\midrule
+TF--IDF + logistic regression & .679 & .559 & [.441, .632] & .740 & .527 & 23 & 9 & 20 & 52 \\
+ModernBERT-base & .750 & .646 & [.537, .715] & .725 & .544 & 24 & 13 & 18 & 55 \\
+ModernBERT-large & \textbf{.762} & \textbf{.671} & [.538, .750] & \textbf{.755} & \textbf{.593} & 26 & 5 & 18 & \textbf{49} \\
+\bottomrule
+\end{tabular}
+\caption{Topic-only classification and end-to-end routing on the gold set. $^{\dagger}$Topic-only evaluation uses gold guidance labels for the 84 guidance-positive conversations, which realise only 12 of the 14 classes; that fixed set is used for macro-F1 and its bootstrap intervals. End-to-end scores use all 200 conversations and the 13 classification outcomes observed in the gold set. Cascade errors are false-positive (FP) and false-negative (FN) routing and a wrong topic after correct positive routing (Topic).}
+\label{tab:gold-topic-cascade}
+\end{table}

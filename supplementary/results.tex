@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+% Allow compilation from either the project root or this directory.
+\makeatletter
+\def\input@path{{generated/}{../generated/}}
+\makeatother
+
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+\title{Supplementary Results and Reliability Analyses}
+\author{Supplementary record for \texttt{main.tex}}
+\date{11 September 2026}
+
+\begin{document}
+\maketitle
+
+\section{Evaluation procedure}
+
+The guidance models were calibrated on the silver validation set and then evaluated once on the adjudicated gold set without further adjustment. Reliability intervals use 2,000 non-parametric conversation-level bootstrap resamples with replacement and random seed 42. Sampling is not stratified. Guidance and end-to-end intervals are percentile 95\% confidence intervals for macro-F1 over 200 resampled conversations. Topic macro-F1 uses the fixed set of 12 legal topics observed among the 84 guidance-positive gold conversations; end-to-end macro-F1 uses the 13 routing outcomes observed in the gold set.
+
+Exact two-sided McNemar tests compare correctness on the same adjudicated examples. Guidance and end-to-end comparisons use all 200 conversations, while topic-only comparisons use the 84 guidance-positive conversations.
+
+\section{Per-topic results}
+
+\input{gold_topic_appendix.tex}
+
+Performance varies substantially across topics. ModernBERT-large scores above .84 on ``Intellectual Property,'' ``Employment \& Labor,'' ``Immigration \& Citizenship,'' and ``Criminal Law,'' but .444 on ``Government \& Administrative'' and .000 on ``Civil Rights \& Constitutional,'' which has one gold example. Five observed topics have five examples or fewer, so the per-class results are descriptive.
+
+\section{Full guidance-detection metrics}
+
+\input{gold_guidance_results_full.tex}
+
+\section{Exploratory early-prefix results}
+
+\input{gold_prefix_turn_results.tex}
+
+Turn-1 bootstrap 95\% intervals for macro-F1 overlap: TF--IDF [.770, .876], ModernBERT-base [.730, .846], and ModernBERT-large [.766, .873]. Among the 84 gold-positive conversations, the turn-1 models identify 67, 60, and 65 cases, respectively. Turn 2 is restricted to 53 gold-positive conversations with at least two user turns; TF--IDF identifies 43, ModernBERT-base 41, and ModernBERT-large 44. These results use eventual conversation-level guidance labels rather than adjudicated onset labels.
+
+\section{Paired significance tests}
+
+\input{gold_significance.tex}
+
+None of the eight comparisons reaches $p<.05$. These tests provide no statistically significant evidence that one evaluated system is superior to another. The results reported in the main paper should therefore be interpreted as numerical rankings.
+
+\section{Silver-label sensitivity}
+
+The model-size ordering differs between the 290-conversation silver validation set and the 200-conversation human-adjudicated gold set. ModernBERT-base exceeds ModernBERT-large by 2.9 macro-F1 points on silver topic validation. On the gold topic task, ModernBERT-large scores .671 and ModernBERT-base .646, reversing the ordering by 2.5 points. ModernBERT-large also has the highest numerical full-conversation guidance macro-F1 (.845) and end-to-end macro-F1 (.593). The small gold set does not identify a single cause for the reversal.
+
+Adjudication changed the silver guidance decision for 8 of the 200 gold conversations. Across the six guidance detectors, accuracy on these cases ranges from .375 to .500, compared with .833 to .880 on the other 192. These cases may reflect silver-label patterns learned by the models, but they are also likely more ambiguous, and the subgroup is too small for a stable estimate. Among the 7 gold guidance-positive conversations whose silver primary topic changed, ModernBERT-base and ModernBERT-large each predict the adjudicated topic correctly in 5 cases, while TF--IDF does so in 3.
+
+\section{Resources}
+
+The \href{https://huggingface.co/collections/AmirMohseni/legal-guidance-in-the-wild}{Legal Guidance in the Wild Hugging Face collection} provides the datasets, checkpoints, training details, and evaluation artifacts. The evaluation script is \path{paper/analysis/evaluate_jurix_gold.py}; its \path{--write-tables} option regenerates the LaTeX tables included here.
+
+\end{document}

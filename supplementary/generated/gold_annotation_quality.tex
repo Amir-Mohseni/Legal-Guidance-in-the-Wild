@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrr}
+\toprule
+& $n$ & Agreement & $\kappa$ \\
+\midrule
+\multicolumn{4}{l}{\textit{Between reviewers}} \\
+\quad Guidance label & 199 & .965 & .927 \\
+\quad Topic verdict$^{\dagger}$ & 198 & .949 & .561 \\
+\midrule
+\multicolumn{4}{l}{\textit{Adjudicated gold agrees with}} \\
+\quad Reviewer A & 199 & .990 & -- \\
+\quad Reviewer B & 199 & .965 & -- \\
+\quad Silver guidance label & 200 & .960 & -- \\
+\quad Silver topic label$^{\ddagger}$ & 84 & .917 & -- \\
+\midrule
+\multicolumn{4}{l}{\textit{Resolution source}} \\
+\quad Reviewer agreement & 186 & .930 & -- \\
+\quad Joint adjudication & 14 & .070 & -- \\
+\bottomrule
+\end{tabular}
+\caption{Annotation quality for the 200-conversation gold set. Pairwise agreement uses available paired verdicts; all 200 conversations received consensus labels. $^{\dagger}$Topic $\kappa$ is computed over correct/incorrect verdicts and is affected by their imbalance (94\% ``correct''). $^{\ddagger}$Silver topic agreement is restricted to the 84 gold guidance-positive conversations.}
+\label{tab:gold-annotation}
+\end{table}

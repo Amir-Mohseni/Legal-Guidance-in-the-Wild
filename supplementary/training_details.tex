@@ -1,0 +1,67 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+% Allow compilation from either the project root or this directory.
+\makeatletter
+\def\input@path{{generated/}{../generated/}}
+\makeatother
+
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+\title{Training and Model-Selection Details}
+\author{Supplementary record for \texttt{main.tex}}
+\date{10 September 2026}
+
+\begin{document}
+\maketitle
+
+\section{Configuration summary}
+
+\input{training_configuration.tex}
+
+The fixed 200-conversation gold set was sampled with seed 42 using earlier labels to contain 100 guidance-positive and 100 guidance-negative conversations. Topic was not used for this selection. After v3 relabeling and human adjudication, it contains 84 guidance-positive and 116 guidance-negative conversations. The remaining 1,922 conversations were split with seed 42 into 1,632 training and 290 validation conversations. This split was stratified first by guidance and then, among guidance-positive conversations where counts allowed, by primary topic.
+
+\section{Prefix construction}
+
+A conversation prefix contains all user messages up to a given turn. If guidance begins at user turn $k$, prefixes before $k$ are negative and prefixes at or after $k$ are positive. Conversations without guidance contribute only negative prefixes. All prefixes from one conversation remain in the same split.
+
+Each prefix is weighted by the inverse of its conversation's number of user turns, so every conversation contributes a total weight of 1. Prefix training is used only for guidance detection; no prefix topic classifier is trained.
+
+The frozen splits contain 4,865 training prefixes from 1,632 conversations and 912 validation prefixes from 290 conversations. Of these, 2,042 training prefixes and 376 validation prefixes are positive.
+
+\section{Model selection and hardware}
+
+The prefix ModernBERT models were trained on an A100 40GB GPU. Their best checkpoints minimize conversation-weighted validation loss. Guidance thresholds maximize conversation-weighted macro-F1, with positive-class F1 used as a tie-breaker.
+
+Full-conversation ModernBERT checkpoints are selected by validation macro-F1 before guidance-threshold selection. Topic training uses class weights because the legal-topic distribution is imbalanced.
+
+\section{Silver annotation provenance}
+
+Taxonomy development used OpenAI's GPT-5.6 Terra through the OpenAI API at high reasoning effort. Final silver annotation used GPT-5.6 Sol at medium reasoning effort under the frozen taxonomy. Both runs used the structured prompt and JSON schema in \path{classification/prompts.py}. The corresponding run configurations are \path{classification/config_v21_review_balanced_nonguidance_terra.yaml} and \path{classification/config_v3_classify_all.yaml}.
+
+\section{Archival reproducibility record}
+
+\begin{itemize}
+  \item V3 relabel source pin: \texttt{837f1001802bcf08ad18\hspace{0pt}baf61ea52f7abfc35b84}.
+  \item Hierarchical training split fingerprints: train \texttt{6ba4c269\hspace{0pt}6e889276} and validation \texttt{403fe118\hspace{0pt}d76c8360}.
+  \item Gold evaluation: 200 adjudicated conversations, including 84 guidance-positive conversations.
+  \item Bootstrap: 2,000 conversation-level resamples with replacement, seed 42, without stratification.
+  \item Full TF--IDF: $C=1$ and guidance threshold 0.51, selected after searching $C\in\{0.25,1,4\}$.
+\end{itemize}
+
+\section{Human-review completeness}
+
+Both reviewers examined all 200 gold conversations. Every case in which their judgments differed was jointly re-examined and resolved by consensus, producing a final guidance label and primary topic where applicable. All 200 conversations are retained in the classifier evaluations.
+
+\section{Artifact collection and evaluation code}
+
+The \href{https://huggingface.co/collections/AmirMohseni/legal-guidance-in-the-wild}{Legal Guidance in the Wild Hugging Face collection} consolidates the final datasets, checkpoints, training details, and evaluation artifacts. The evaluation script is \path{paper/analysis/evaluate_jurix_gold.py}; from the repository root, run \path{uv run python paper/analysis/evaluate_jurix_gold.py}. The optional \path{--write-tables} flag regenerates the LaTeX tables.
+
+\end{document}

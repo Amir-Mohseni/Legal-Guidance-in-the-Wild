@@ -1,0 +1,10 @@
+component,family,task,mode,repo,present,detail
+tfidf_user_guidance,TF-IDF + LogReg,guidance,user,AmirMohseni/tfidf-logreg-v3-user-seed42,True,ok
+tfidf_user_topic,TF-IDF + LogReg,topic,user,AmirMohseni/tfidf-logreg-v3-user-seed42,True,ok
+modernbert_base_user_guidance,ModernBERT-base,guidance,user,AmirMohseni/modernbert-base-v3-seeks-guidance-user-len4096-seed42,True,ok
+modernbert_base_user_topic,ModernBERT-base,topic,user,AmirMohseni/modernbert-base-v3-primary-topic-user-len4096-seed42,True,ok
+modernbert_large_user_guidance,ModernBERT-large,guidance,user,AmirMohseni/modernbert-large-v3-seeks-guidance-user-len4096-seed42,True,ok
+modernbert_large_user_topic,ModernBERT-large,topic,user,AmirMohseni/modernbert-large-v3-primary-topic-user-len4096-seed42,True,ok
+tfidf_prefix_guidance,TF-IDF + LogReg (prefix),guidance,prefix,AmirMohseni/tfidf-logreg-v3-legal-guidance-prefix-seed42,True,ok
+modernbert_base_prefix_guidance,ModernBERT-base (prefix),guidance,prefix,AmirMohseni/modernbert-base-v3-legal-guidance-prefix-len4096-seed42,True,ok
+modernbert_large_prefix_guidance,ModernBERT-large (prefix),guidance,prefix,AmirMohseni/modernbert-large-v3-legal-guidance-prefix-len4096-seed42,True,ok

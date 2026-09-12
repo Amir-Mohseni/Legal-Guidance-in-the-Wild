@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrrlrrrr}
+\toprule
+Model & Acc. & Macro-F1 & \multicolumn{1}{c}{95\% CI} & Prec. & Rec. & Pos. F1 & AUPRC \\
+\midrule
+\multicolumn{8}{l}{\textit{Full conversation}} \\
+\quad TF--IDF + logistic regression & .840 & .839 & [.784, .888] & \textbf{.765} & .893 & .824 & .866 \\
+\quad ModernBERT-base & .815 & .813 & [.755, .865] & .747 & .845 & .793 & .894 \\
+\quad ModernBERT-large & \textbf{.845} & \textbf{.845} & [.793, .894] & .752 & \textbf{.940} & \textbf{.836} & \textbf{.901} \\
+\midrule
+\multicolumn{8}{l}{\textit{Prefix models (final turn)}} \\
+\quad TF--IDF + logistic regression & .825 & .823 & [.767, .873] & .763 & .845 & .802 & .864 \\
+\quad ModernBERT-base & .830 & .828 & [.771, .880] & .760 & .869 & .811 & .903 \\
+\quad ModernBERT-large & \textbf{.860} & \textbf{.859} & [.810, .905] & \textbf{.792} & \textbf{.905} & \textbf{.844} & \textbf{.940} \\
+\bottomrule
+\end{tabular}
+\caption{Full guidance-detection metrics on the 200 adjudicated gold conversations. Precision, recall, and positive F1 are for the guidance class. Macro-F1 intervals use 2,000 conversation-level bootstrap resamples with replacement and seed 42. Prefix models are scored after the final user turn. Bold marks the best value within each block.}
+\label{tab:supp-gold-guidance}
+\end{table}

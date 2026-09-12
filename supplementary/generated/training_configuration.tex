@@ -1,0 +1,32 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{0.15\textwidth}p{0.25\textwidth}p{0.30\textwidth}p{0.22\textwidth}@{}}
+\toprule
+System & Input and representation & Training configuration & Validation selection \\
+\midrule
+Full TF--IDF
+& Complete user turns; word 1--2-grams (150k) and character 3--5-grams (200k)
+& Class-balanced logistic regression; selected $C=1$ from $\{0.25,1,4\}$
+& Guidance threshold 0.51 selected on validation data \\
+\addlinespace
+Full ModernBERT
+& Complete user turns; base and large encoders; maximum length 4,096
+& Batch size 32, weight decay 0.01, seed 42; guidance: 3 epochs at $5\times10^{-5}$; class-weighted topic: 10 epochs at $6\times10^{-5}$
+& Checkpoint by macro-F1; guidance thresholds: 0.26 (base), 0.38 (large) \\
+\addlinespace
+Prefix TF--IDF
+& User-turn prefixes; word 1--2-grams and character-within-word 3--5-grams
+& Logistic regression with $C=0.25$; conversation-level weighting
+& Weighted macro-F1; threshold 0.42 \\
+\addlinespace
+Prefix ModernBERT
+& User-turn prefixes; base and large encoders; maximum length 4,096
+& Batch size 32, weight decay 0.01, seed 42; 3 epochs at $5\times10^{-5}$; conversation-level weighting
+& Weighted validation loss; thresholds: 0.51 (base), 0.36 (large) \\
+\bottomrule
+\end{tabular}
+\caption{Training configurations. Thresholds apply to guidance detection. Prefix thresholds maximize conversation-weighted macro-F1, using positive-class F1 as a tie-breaker.}
+\label{tab:training-config}
+\end{table}

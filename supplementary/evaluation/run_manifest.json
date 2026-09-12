@@ -1,0 +1,101 @@
+{
+  "gold_dataset": "AmirMohseni/WildChat-Legal-Classification",
+  "gold_config": "golden",
+  "gold_split": "test",
+  "training_dataset": "AmirMohseni/WildChat-Legal-Classification-V3-Hierarchical",
+  "seed": 42,
+  "max_length": 4096,
+  "gold_rows": 200,
+  "gold_guidance_positive": 84,
+  "gold_topic_eligible": 84,
+  "components": {
+    "tfidf_user_guidance": {
+      "family": "TF-IDF + LogReg",
+      "task": "guidance",
+      "mode": "user",
+      "repo": "AmirMohseni/tfidf-logreg-v3-user-seed42",
+      "artifact": "guidance_tfidf_logreg.joblib"
+    },
+    "tfidf_user_topic": {
+      "family": "TF-IDF + LogReg",
+      "task": "topic",
+      "mode": "user",
+      "repo": "AmirMohseni/tfidf-logreg-v3-user-seed42",
+      "artifact": "topic_tfidf_logreg.joblib"
+    },
+    "modernbert_base_user_guidance": {
+      "family": "ModernBERT-base",
+      "task": "guidance",
+      "mode": "user",
+      "repo": "AmirMohseni/modernbert-base-v3-seeks-guidance-user-len4096-seed42",
+      "base_model": "answerdotai/ModernBERT-base",
+      "threshold": 0.26,
+      "batch": 8
+    },
+    "modernbert_base_user_topic": {
+      "family": "ModernBERT-base",
+      "task": "topic",
+      "mode": "user",
+      "repo": "AmirMohseni/modernbert-base-v3-primary-topic-user-len4096-seed42",
+      "base_model": "answerdotai/ModernBERT-base",
+      "batch": 8
+    },
+    "modernbert_large_user_guidance": {
+      "family": "ModernBERT-large",
+      "task": "guidance",
+      "mode": "user",
+      "repo": "AmirMohseni/modernbert-large-v3-seeks-guidance-user-len4096-seed42",
+      "base_model": "answerdotai/ModernBERT-large",
+      "threshold": null,
+      "batch": 2
+    },
+    "modernbert_large_user_topic": {
+      "family": "ModernBERT-large",
+      "task": "topic",
+      "mode": "user",
+      "repo": "AmirMohseni/modernbert-large-v3-primary-topic-user-len4096-seed42",
+      "base_model": "answerdotai/ModernBERT-large",
+      "batch": 2
+    },
+    "tfidf_prefix_guidance": {
+      "family": "TF-IDF + LogReg (prefix)",
+      "task": "guidance",
+      "mode": "prefix",
+      "repo": "AmirMohseni/tfidf-logreg-v3-legal-guidance-prefix-seed42",
+      "artifact": "tfidf_prefix_pipeline.joblib",
+      "threshold": 0.42
+    },
+    "modernbert_base_prefix_guidance": {
+      "family": "ModernBERT-base (prefix)",
+      "task": "guidance",
+      "mode": "prefix",
+      "repo": "AmirMohseni/modernbert-base-v3-legal-guidance-prefix-len4096-seed42",
+      "base_model": "answerdotai/ModernBERT-base",
+      "threshold": 0.51,
+      "batch": 8
+    },
+    "modernbert_large_prefix_guidance": {
+      "family": "ModernBERT-large (prefix)",
+      "task": "guidance",
+      "mode": "prefix",
+      "repo": "AmirMohseni/modernbert-large-v3-legal-guidance-prefix-len4096-seed42",
+      "base_model": "answerdotai/ModernBERT-large",
+      "threshold": 0.36,
+      "batch": 2
+    }
+  },
+  "legacy_repositories_excluded": [
+    "AmirMohseni/modernbert-primary_topic",
+    "AmirMohseni/modernbert-seeks_guidance",
+    "AmirMohseni/legalbert-primary_topic",
+    "AmirMohseni/legalbert-seeks_guidance",
+    "AmirMohseni/modernbert-v3-primary_topic-user",
+    "AmirMohseni/modernbert-v3-seeks_guidance-user"
+  ],
+  "notes": [
+    "Reviewer guidance/topic are the gold targets.",
+    "Topic evaluation is restricted to reviewer-guidance-positive rows.",
+    "Prefix models are evaluated at the final prefix only; gold onset is not claimed.",
+    "The ModernBERT-large full-guidance threshold is selected on the frozen silver validation split."
+  ]
+}

@@ -1,0 +1,29 @@
+\begin{table}[!ht]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+& \multicolumn{3}{c}{Silver dataset} & \multicolumn{4}{c}{Gold set} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-8}
+Topic & $n$ & \% & Any \% & $n$ & TF--IDF & MB-base & MB-large \\
+\midrule
+Immigration \& Citizenship & 137 & 14.1 & 14.6 & 8 & .800 & .800 & \textbf{.857} \\
+Criminal Law & 111 & 11.4 & 11.9 & 12 & .857 & \textbf{.870} & .846 \\
+Intellectual Property & 110 & 11.3 & 12.0 & 7 & .588 & .875 & \textbf{.933} \\
+Business \& Commercial & 107 & 11.0 & 17.9 & 11 & .640 & .588 & \textbf{.667} \\
+Tax Law & 105 & 10.8 & 13.3 & 12 & .556 & \textbf{.783} & \textbf{.783} \\
+Employment \& Labor & 87 & 9.0 & 10.0 & 10 & .889 & \textbf{.900} & \textbf{.900} \\
+Housing \& Property & 81 & 8.3 & 9.5 & 8 & .857 & \textbf{.933} & .800 \\
+Government \& Administrative & 73 & 7.5 & 15.2 & 5 & .182 & .000 & \textbf{.444} \\
+Consumer \& Personal Finance & 54 & 5.6 & 8.2 & 3 & \textbf{.667} & .500 & .500 \\
+Family \& Estates & 51 & 5.2 & 6.6 & 3 & .667 & \textbf{.750} & .571 \\
+Data Privacy \& Technology & 36 & 3.7 & 5.8 & 4 & .000 & \textbf{.750} & \textbf{.750} \\
+Torts \& Civil Liability & 12 & 1.2 & 2.4 & -- & -- & -- & -- \\
+Other & 5 & 0.5 & 0.6 & -- & -- & -- & -- \\
+Civil Rights \& Constitutional & 3 & 0.3 & 2.2 & 1 & .000 & .000 & .000 \\
+\bottomrule
+\end{tabular}
+\caption{Legal topics by frequency in the silver dataset and gold per-class performance. Silver columns cover the 972 guidance-positive conversations, where $n$ and \% are primary-topic assignments and Any \% also counts secondary labels; gold columns give support among the 84 adjudicated guidance-positive conversations and per-class F1. The 2 classes without gold support are marked as unavailable and excluded from macro-F1, and five classes have five or fewer gold examples.}
+\label{tab:topic-full}
+\end{table}

@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{lrrrr}
+\toprule
+& \multicolumn{2}{c}{Turn 1 ($n=200$)} & \multicolumn{2}{c}{Turn 2 ($n=104$)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Model & Acc. & Macro-F1 & Acc. & Macro-F1 \\
+\midrule
+TF--IDF + logistic regression & \textbf{.830} & \textbf{.826} & .798 & .798 \\
+ModernBERT-base & .800 & .792 & .808 & .808 \\
+ModernBERT-large & .825 & .819 & \textbf{.865} & \textbf{.865} \\
+\bottomrule
+\end{tabular}
+\caption{Exploratory initial-turn prediction results. Turn 1 uses all gold conversations; Turn 2 uses the 104 conversations containing at least two user turns. Labels indicate whether the complete conversation eventually seeks guidance, not whether guidance has begun by that turn. The columns use different evaluation sets and should not be interpreted as within-model improvement.}
+\label{tab:gold-prefix-turns}
+\end{table}

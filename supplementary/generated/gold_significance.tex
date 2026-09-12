@@ -1,0 +1,21 @@
+\begin{table}[!ht]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{llrrr}
+\toprule
+Task & Comparison (A vs. B) & A only & B only & $p$ \\
+\midrule
+Guidance & ModernBERT-large vs. TF--IDF + LogReg & 14 & 13 & 1.000 \\
+ & ModernBERT-large vs. ModernBERT-base & 15 & 9 & .307 \\
+ & ModernBERT-large (prefix) vs. ModernBERT-large & 12 & 9 & .664 \\
+ & ModernBERT-large (prefix) vs. ModernBERT-base & 16 & 7 & .093 \\
+Topic only & ModernBERT-large vs. TF--IDF + LogReg & 13 & 6 & .167 \\
+ & ModernBERT-large vs. ModernBERT-base & 5 & 4 & 1.000 \\
+Cascade & ModernBERT-large vs. TF--IDF + LogReg & 22 & 19 & .755 \\
+ & ModernBERT-large vs. ModernBERT-base & 18 & 12 & .362 \\
+\bottomrule
+\end{tabular}
+\caption{Two-sided exact paired McNemar tests on the gold set. ``A only'' and ``B only'' count conversations exactly one system classified correctly; the test uses only these discordant pairs. Guidance and end-to-end tests use all 200 conversations, while topic-only tests use the 84 guidance-positive ones. No comparison reaches $p < .05$.}
+\label{tab:gold-significance}
+\end{table}

@@ -11,19 +11,19 @@ This repo holds the gold annotations and supplementary artifacts. Datasets, mode
 - [Hugging Face collection](https://huggingface.co/collections/AmirMohseni/legal-guidance-in-the-wild) — datasets, checkpoints, and evaluation artifacts
 - [WildChat-Legal-Classification](https://huggingface.co/datasets/AmirMohseni/WildChat-Legal-Classification) — 2,122 silver-labeled conversations (test split = this gold set)
 - [WildChat-Legal-Classification-V3-Hierarchical](https://huggingface.co/datasets/AmirMohseni/WildChat-Legal-Classification-V3-Hierarchical) — train / validation split used for model development
-- [Manual-review worksheet](https://docs.google.com/spreadsheets/d/1W-3E8QqmrK20B5ZaRduetcYuOwqNHmRmOiauoJHLBrg/edit) — both reviewers' labels and the adjudication log
 
 ## Repository contents
 
 | Path | Description |
 | --- | --- |
-| [`annotations/Legal_tasks_Manual_Review.xlsx`](annotations/Legal_tasks_Manual_Review.xlsx) | Two-reviewer adjudication workbook (`Amir`, `Jerry`, `golden`) |
-| [`annotations/Legal_tasks_Manual_Review_Conversations_v3.csv`](annotations/Legal_tasks_Manual_Review_Conversations_v3.csv) | 200-row gold export with silver labels and reviewer columns |
+| [`annotations/gold_set.csv`](annotations/gold_set.csv) | Adjudicated gold labels for 200 conversations |
 | [`annotations/TAXONOMY_V3.md`](annotations/TAXONOMY_V3.md) | Label taxonomy used for the gold set |
 | [`supplementary/results.tex`](supplementary/results.tex) | Supplementary results and reliability analyses |
 | [`supplementary/training_details.tex`](supplementary/training_details.tex) | Training and model-selection details |
 | [`supplementary/generated/`](supplementary/generated) | Tables and figures included by the supplementary TeX |
 | [`supplementary/evaluation/`](supplementary/evaluation) | Frozen gold-set evaluation bundle |
+
+The gold set has four columns: `id`, `conversation`, `seeks_legal_guidance`, and `primary_topic`. Topic is filled only when guidance is present.
 
 ## License
 

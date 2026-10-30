@@ -6,14 +6,18 @@ People ask conversational AI models about their legal rights, obligations, proce
 
 This repository accompanies **Legal Guidance in the Wild**, a JURIX 2026 paper. We contribute a multi-axis taxonomy of legal queries (whether guidance is sought, how the request is formulated, and which legal domains it concerns), apply it to 2,122 naturally occurring [WildChat-1M](https://huggingface.co/datasets/allenai/WildChat-1M) conversations, and release a human-adjudicated gold set of 200 conversations (84 guidance-positive, 116 guidance-negative).
 
-This repo holds the gold annotations, supplementary artifacts, and code for reproducing the TF-IDF baselines and the gold-set results. Datasets and model checkpoints live on Hugging Face.
+This repository hosts the supplementary materials referenced in the paper, including the gold annotations, supporting analyses, training details, and code for reproducing the TF-IDF baselines and gold-set results. Datasets and model checkpoints are available through the [Hugging Face collection](https://huggingface.co/collections/AmirMohseni/legal-guidance-in-the-wild).
 
 ## Supplementary materials
 
-- [Supplementary Results and Reliability Analyses (PDF)](supplementary/results.pdf)
-- [Training and Model-Selection Details (PDF)](supplementary/training_details.pdf)
+References to “supplementary material” or “supplementary materials” in the paper refer to the supporting documents and artifacts hosted in this repository.
 
-The editable LaTeX sources are available alongside the PDFs in [`supplementary/`](supplementary/).
+| Document | Contents | Files |
+| --- | --- | --- |
+| **Supplementary Results and Reliability Analyses** | Per-topic scores, full guidance-detection metrics, bootstrap confidence intervals, exploratory early-prefix results, and paired significance tests | [Read PDF](supplementary/results.pdf) · [Download PDF](supplementary/results.pdf?raw=true) · [LaTeX source](supplementary/results.tex) |
+| **Training and Model-Selection Details** | Data splits, training configurations, prefix construction, model selection, annotation provenance, and reproducibility details | [Read PDF](supplementary/training_details.pdf) · [Download PDF](supplementary/training_details.pdf?raw=true) · [LaTeX source](supplementary/training_details.tex) |
+
+The [gold annotations](annotations/gold_set.csv), [taxonomy](annotations/TAXONOMY_V3.md), [supporting tables and figures](supplementary/generated/), and [frozen evaluation bundle](supplementary/evaluation/) are also available in the repository. See [Code](#code) for instructions to recompute the gold-set results.
 
 ## Resources
 

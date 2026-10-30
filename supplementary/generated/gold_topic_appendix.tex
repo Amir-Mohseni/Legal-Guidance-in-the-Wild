@@ -1,10 +1,10 @@
-\begin{table}[!ht]
+\begin{table}[!htbp]
 \centering
 \scriptsize
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{lrrrrrrr}
 \toprule
-& \multicolumn{3}{c}{Silver dataset} & \multicolumn{4}{c}{Gold set} \\
+& \multicolumn{3}{c}{Silver-labeled dataset} & \multicolumn{4}{c}{Gold evaluation set} \\
 \cmidrule(lr){2-4}\cmidrule(lr){5-8}
 Topic & $n$ & \% & Any \% & $n$ & TF--IDF & MB-base & MB-large \\
 \midrule
@@ -24,6 +24,6 @@ Other & 5 & 0.5 & 0.6 & -- & -- & -- & -- \\
 Civil Rights \& Constitutional & 3 & 0.3 & 2.2 & 1 & .000 & .000 & .000 \\
 \bottomrule
 \end{tabular}
-\caption{Legal topics by frequency in the silver dataset and gold per-class performance. Silver columns cover the 972 guidance-positive conversations, where $n$ and \% are primary-topic assignments and Any \% also counts secondary labels; gold columns give support among the 84 adjudicated guidance-positive conversations and per-class F1. The 2 classes without gold support are marked as unavailable and excluded from macro-F1, and five classes have five or fewer gold examples.}
+\caption{Legal topics by frequency in the silver-labeled dataset and gold per-class performance. Silver columns cover the 972 guidance-positive conversations, where $n$ and \% are primary-topic assignments and Any \% also counts secondary labels; gold columns give support among the 84 human-reviewed guidance-positive conversations and per-class F1. The 2 classes without gold support are marked as unavailable and excluded from macro-F1, and five classes have five or fewer gold examples.}
 \label{tab:topic-full}
 \end{table}

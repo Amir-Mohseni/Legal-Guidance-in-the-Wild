@@ -1,4 +1,4 @@
-\begin{table}[!ht]
+\begin{table}[!htbp]
 \centering
 \scriptsize
 \setlength{\tabcolsep}{5pt}
@@ -16,6 +16,6 @@ Cascade & ModernBERT-large vs. TF--IDF + LogReg & 22 & 19 & .755 \\
  & ModernBERT-large vs. ModernBERT-base & 18 & 12 & .362 \\
 \bottomrule
 \end{tabular}
-\caption{Two-sided exact paired McNemar tests on the gold set. ``A only'' and ``B only'' count conversations exactly one system classified correctly; the test uses only these discordant pairs. Guidance and end-to-end tests use all 200 conversations, while topic-only tests use the 84 guidance-positive ones. No comparison reaches $p < .05$.}
+\caption{Two-sided exact paired McNemar tests on the gold evaluation set. ``A only'' and ``B only'' count conversations exactly one system classified correctly; the test uses only these discordant pairs. Guidance and end-to-end tests use all 200 conversations, while topic-only tests use the 84 guidance-positive ones. No comparison reaches $p < .05$.}
 \label{tab:gold-significance}
 \end{table}

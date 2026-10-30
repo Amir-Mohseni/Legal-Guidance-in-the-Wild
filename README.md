@@ -8,6 +8,13 @@ This repository accompanies **Legal Guidance in the Wild**, a JURIX 2026 paper. 
 
 This repo holds the gold annotations, supplementary artifacts, and code for reproducing the TF-IDF baselines and the gold-set results. Datasets and model checkpoints live on Hugging Face.
 
+## Supplementary materials
+
+- [Supplementary Results and Reliability Analyses (PDF)](supplementary/results.pdf)
+- [Training and Model-Selection Details (PDF)](supplementary/training_details.pdf)
+
+The editable LaTeX sources are available alongside the PDFs in [`supplementary/`](supplementary/).
+
 ## Resources
 
 - [Hugging Face collection](https://huggingface.co/collections/AmirMohseni/legal-guidance-in-the-wild) — datasets, checkpoints, and evaluation artifacts
@@ -35,8 +42,8 @@ The ModernBERT checkpoints are on Hugging Face; each model card gives an inferen
 | [`annotations/TAXONOMY_V3.md`](annotations/TAXONOMY_V3.md) | Label taxonomy used for the gold set |
 | [`notebooks/train_tfidf.ipynb`](notebooks/train_tfidf.ipynb) | TF-IDF training and gold evaluation |
 | [`scripts/evaluate_gold.py`](scripts/evaluate_gold.py) | Gold-set results from the frozen predictions |
-| [`supplementary/results.tex`](supplementary/results.tex) | Supplementary results and reliability analyses |
-| [`supplementary/training_details.tex`](supplementary/training_details.tex) | Training and model-selection details |
+| [`supplementary/results.pdf`](supplementary/results.pdf) ([source](supplementary/results.tex)) | Supplementary results and reliability analyses |
+| [`supplementary/training_details.pdf`](supplementary/training_details.pdf) ([source](supplementary/training_details.tex)) | Training and model-selection details |
 | [`supplementary/generated/`](supplementary/generated) | Tables and figures included by the supplementary TeX |
 | [`supplementary/evaluation/`](supplementary/evaluation) | Frozen gold-set evaluation bundle |
 

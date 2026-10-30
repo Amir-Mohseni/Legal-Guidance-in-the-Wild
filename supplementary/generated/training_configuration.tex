@@ -1,4 +1,4 @@
-\begin{table}[t]
+\begin{table}[!htbp]
 \centering
 \scriptsize
 \setlength{\tabcolsep}{3pt}
@@ -14,7 +14,7 @@ Full TF--IDF
 Full ModernBERT
 & Complete user turns; base and large encoders; maximum length 4,096
 & Batch size 32, weight decay 0.01, seed 42; guidance: 3 epochs at $5\times10^{-5}$; class-weighted topic: 10 epochs at $6\times10^{-5}$
-& Checkpoint by macro-F1; guidance thresholds: 0.26 (base), 0.38 (large) \\
+& Checkpoint selected by macro-F1; guidance thresholds: 0.26 (base), 0.38 (large) \\
 \addlinespace
 Prefix TF--IDF
 & User-turn prefixes; word 1--2-grams and character-within-word 3--5-grams

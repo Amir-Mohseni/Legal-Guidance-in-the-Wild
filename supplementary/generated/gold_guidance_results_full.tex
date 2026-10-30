@@ -1,4 +1,4 @@
-\begin{table}[t]
+\begin{table}[!htbp]
 \centering
 \footnotesize
 \setlength{\tabcolsep}{3.5pt}
@@ -17,6 +17,6 @@ Model & Acc. & Macro-F1 & \multicolumn{1}{c}{95\% CI} & Prec. & Rec. & Pos. F1 &
 \quad ModernBERT-large & \textbf{.860} & \textbf{.859} & [.810, .905] & \textbf{.792} & \textbf{.905} & \textbf{.844} & \textbf{.940} \\
 \bottomrule
 \end{tabular}
-\caption{Full guidance-detection metrics on the 200 adjudicated gold conversations. Precision, recall, and positive F1 are for the guidance class. Macro-F1 intervals use 2,000 conversation-level bootstrap resamples with replacement and seed 42. Prefix models are scored after the final user turn. Bold marks the best value within each block.}
+\caption{Full guidance-detection metrics on the 200-conversation gold evaluation set. Precision, recall, and positive F1 are for the guidance class. Macro-F1 intervals use 2,000 conversation-level bootstrap resamples with replacement and seed 42. Prefix models are scored after the final user turn. Bold marks the best value within each block.}
 \label{tab:supp-gold-guidance}
 \end{table}

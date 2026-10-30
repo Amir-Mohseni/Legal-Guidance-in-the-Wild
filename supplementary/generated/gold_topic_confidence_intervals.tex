@@ -1,0 +1,18 @@
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrlrl}
+\toprule
+& \multicolumn{2}{c}{Topic classification} & \multicolumn{2}{c}{End-to-end routing} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Model & Macro-F1 & 95\% CI & Macro-F1 & 95\% CI \\
+\midrule
+TF--IDF + logistic regression & .559 & [.441, .632] & .527 & [.418, .591] \\
+ModernBERT-base & .646 & [.537, .715] & .544 & [.450, .608] \\
+ModernBERT-large & .671 & [.538, .750] & .593 & [.487, .667] \\
+\bottomrule
+\end{tabular}
+\caption{Macro-F1 and 95\% bootstrap confidence intervals for topic classification and end-to-end routing on the gold evaluation set. Topic classification uses gold guidance labels for the 84 guidance-positive conversations and the fixed set of 12 observed topics. End-to-end routing uses all 200 conversations and the 13 observed routing outcomes. Intervals use 2,000 conversation-level bootstrap resamples with replacement and seed 42.}
+\label{tab:supp-topic-cascade-ci}
+\end{table}

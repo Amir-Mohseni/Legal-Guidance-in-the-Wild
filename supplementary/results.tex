@@ -4,7 +4,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{booktabs}
-\usepackage[section]{placeins}
+\usepackage{float}
+\usepackage{needspace}
 \usepackage{hyperref}
 
 % Allow compilation from either the project root or this directory.
@@ -29,22 +30,33 @@ The guidance models were calibrated on the silver validation split and then eval
 
 Exact two-sided McNemar tests compare correctness on the same human-reviewed examples. Guidance and end-to-end comparisons use all 200 conversations, while topic-only comparisons use the 84 guidance-positive conversations.
 
+\Needspace{25\baselineskip}
 \section{Per-topic results}
 
 \input{gold_topic_appendix.tex}
 
 Performance varies substantially across topics. ModernBERT-large scores above .84 on ``Intellectual Property,'' ``Employment \& Labor,'' ``Immigration \& Citizenship,'' and ``Criminal Law,'' but .444 on ``Government \& Administrative'' and .000 on ``Civil Rights \& Constitutional,'' which has one gold example. Five observed topics have five examples or fewer, so the per-class results are descriptive.
 
+\Needspace{16\baselineskip}
+\section{Topic and end-to-end confidence intervals}
+
+\input{gold_topic_confidence_intervals.tex}
+
+Table~\ref{tab:supp-topic-cascade-ci} reports the topic and end-to-end macro-F1 intervals from the frozen evaluation bundle. The intervals overlap across the three systems; paired significance tests are reported below.
+
+\Needspace{18\baselineskip}
 \section{Full guidance-detection metrics}
 
 \input{gold_guidance_results_full.tex}
 
+\Needspace{18\baselineskip}
 \section{Exploratory early-prefix results}
 
 \input{gold_prefix_turn_results.tex}
 
 Turn-1 bootstrap 95\% intervals for macro-F1 overlap: TF--IDF [.770, .876], ModernBERT-base [.730, .846], and ModernBERT-large [.766, .873]. Among the 84 gold-positive conversations, the turn-1 models identify 67, 60, and 65 cases, respectively. Turn 2 is restricted to 53 gold-positive conversations with at least two user turns; TF--IDF identifies 43, ModernBERT-base 41, and ModernBERT-large 44. These results use eventual conversation-level guidance labels rather than human-reviewed onset labels.
 
+\Needspace{20\baselineskip}
 \section{Paired significance tests}
 
 \input{gold_significance.tex}
@@ -53,6 +65,7 @@ None of the eight comparisons reaches $p<.05$. These tests provide no statistica
 
 Human review changed the silver guidance decision for 8 of the 200 gold conversations. Across the six guidance detectors, accuracy on these cases ranges from .375 to .500, compared with .833 to .880 on the other 192. These cases may be more difficult, and the group is too small for a stable estimate. Among the 7 gold guidance-positive conversations whose silver primary topic changed, ModernBERT-base and ModernBERT-large each predict the final topic correctly in 5 cases, while TF--IDF does so in 3.
 
+\Needspace{8\baselineskip}
 \section{Resources}
 
 The \href{https://huggingface.co/collections/AmirMohseni/legal-guidance-in-the-wild}{Legal Guidance in the Wild Hugging Face collection} provides the datasets, checkpoints, training details, and evaluation artifacts. The public evaluation script, \path{scripts/evaluate_gold.py}, recomputes the gold-set results from the frozen predictions in \path{supplementary/evaluation/}.
